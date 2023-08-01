@@ -3,7 +3,7 @@
 #include<stdio.h>
 int main(void)
 {
-    int ch;         // declare ch as a int type, because char type cannot represent EOF character
+    int ch;         // declare ch as an int type, because char type cannot represent EOF character
     int count = 0;
 
     printf("Enter some characters:\n");
