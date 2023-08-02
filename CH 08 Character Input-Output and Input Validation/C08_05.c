@@ -41,9 +41,9 @@ int main(void)
             printf("You either gave me wrong prompts, or you're lying.\n");
             printf("Let's start it all over again.\n");
             printf("Is your number 50?\n");
-            high = 100;
-            low = 1;
-            guess = 50;
+            high = 100;          // reinitialization
+            low = 1; 		 // ...
+            guess = 50;		 // ...
             continue;
         }             
 	    printf("Well, then, is it %d?\n", guess);
