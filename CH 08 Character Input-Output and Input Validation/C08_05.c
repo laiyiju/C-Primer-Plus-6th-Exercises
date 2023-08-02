@@ -33,7 +33,7 @@ int main(void)
         }
         guess = (high + low) / 2;  
 
-        // If the number returns to its initial position and the user still responds with "h" or 
+        // If the number returns to a previous position and the user still responds with "h" or 
         // "l", it indicates that the user's reply is mistaken, and a restart is necessary:
         if (guess == high + 1 || guess == low - 1)
         {
