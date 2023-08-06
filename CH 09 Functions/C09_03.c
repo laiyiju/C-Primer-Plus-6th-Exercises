@@ -13,11 +13,11 @@ int main(void)
 
     printf("Enter a printable character:\n");      // read character
     while ((ch = getchar()) <= 32)     // if the input is ASCII unprintable characters
-        printf("Your input is not printable. Please try re-enter:\n");
+        printf("Your input is not printable. Please re-enter:\n");
     
     printf("Enter the numbers of columns and rows:\n"); 
     while ((scanf("%d %d", &col, &row)) != 2)
-        printf("Invalid input. Please try re-enter:\n");
+        printf("Invalid input. Please re-enter:\n");
     
     chrocol(ch, col, row);
 
