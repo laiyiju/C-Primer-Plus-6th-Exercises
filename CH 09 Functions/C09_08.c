@@ -42,7 +42,7 @@ double power(double n, int exp)
         if (n == 0)
             p = 1; 
         for (i = 0; i > exp; i--)
-            p *= 1 / n;
+            p /= n;
 
     return p;
 }
