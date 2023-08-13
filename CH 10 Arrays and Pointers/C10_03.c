@@ -20,6 +20,7 @@ int max(int arr[], int n)
 {
     int i = 0;
     int max = arr[i];
+    
     for (i = 1; i < n; i++)     // compare the elements one by one
         if (arr[i] > max)       // assign the larger value to max
             max = arr[i];
