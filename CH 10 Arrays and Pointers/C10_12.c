@@ -36,6 +36,7 @@ void yearly(const float ar[][MONTHS], int years)
         // super confusing. If I put subtot's initialization after 'int month = 0' 
         // in the loop like the original listing 10.7, the final result of subtot
         // becomes 0. I don't understand. The same problem happens with 'total'.
+        // I tried different compilers and the problem remains.
         subtot = 0;
         for (int month = 0; month < MONTHS; month++)
             subtot += ar[year][month];
