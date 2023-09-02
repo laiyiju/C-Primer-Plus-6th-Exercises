@@ -7,7 +7,7 @@
 #define SIZE 40
 
 char *s_gets(char *st, int n);
-char *remove_space(char *st);
+void remove_space(char *st);
 int main(void)
 {
     char array[SIZE];                           // declare a string
@@ -15,7 +15,8 @@ int main(void)
     puts("Enter a string with spaces in it:");  // prompt for input
     while (s_gets(array, SIZE))                 // use a while loop to provide input
     {
-        puts(remove_space(array));              // call for remove_space() and print the result
+        remove_space(array);                    // call for remove_space()
+        puts(array);                            // print the result
         puts("Enter another string.");
     }
     return 0;
@@ -39,17 +40,13 @@ char *s_gets(char *st, int n)
     return ret_val;
 }
 
-
-char *remove_space(char *st)
+void remove_space(char *st)
 {
-    char *ptr = st;             // declare a pointer pointing to the start
-    int i;
-
     while (*st)                 // use a while loop to iterate through string
     {
         if (*st == ' ')         // if it is a space character
         {                       
-            i = 0;              // reset i to 0;
+            int i = 0;          // reset i to 0;
             while (st[i])       // use a while loop to move characters forward
             {
                 st[i] = st[i + 1];   // replace it with the next char
@@ -59,5 +56,4 @@ char *remove_space(char *st)
         else                         // when it is not a space,
             st++;                    // increment st.
     }
-    return ptr;
 }
