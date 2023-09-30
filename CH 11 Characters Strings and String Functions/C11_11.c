@@ -110,30 +110,37 @@ void print_increasing_length_order(char st[][COL], int n)
 
 void print_first_word_length_order(char st[][COL], int n)
 {
-    int i = 0;
-    int len[10] = {0,0,0,0,0,0,0,0,0,0};
+    int len[ROW] = {0,0,0,0,0,0,0,0,0,0};
     
-    for (; i < n; i++){
+    for (int i = 0; i < n; i++)
+    {
         int j = 0;
         int length = 0;
 
         while (isspace(st[i][j]))
             j++;
 
-        while (!isspace(st[i][j])){
+        // the end of a string is a null character which is not a white-space
+        // so not being '\0' should be added to the condition of the loop
+        while (!isspace(st[i][j]) && st[i][j] != '\0')  
+        {
             length++;
             j++;
         }
         len[i] = length;
     }
 
-    char tmp[40];                // declare a string array
-    for (i = 0; i < n; i++){
+    for (int g = 0; g < n; g++)
+        printf("%d ", len[g]);
+    puts("\n");
+
+    char tmp[COL];                // declare a string array
+    for (int i = 0; i < n; i++){
         for (int j = 1; i + j < n; j++){
             if (len[i] > len[i + j]){
-                strcpy(tmp, st[i]);
-                strcpy(st[i], st[i + j]);
-                strcpy(st[i + j], tmp);
+                strncpy(tmp, st[i], COL);
+                strncpy(st[i], st[i + j], COL);
+                strncpy(st[i + j], tmp, COL);
             }
         }
         puts(st[i]);
